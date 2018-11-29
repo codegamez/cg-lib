@@ -10,7 +10,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -43,6 +43,36 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
 }
+
 repositories {
     mavenCentral()
 }
+
+ext {
+    bintrayRepo = 'cg-lib'
+    bintrayName = 'lib.codegames'
+
+    libraryName = 'codegames'
+
+    publishedGroupId = 'lib.codegames'
+    artifact = 'cglib'
+    libraryVersion = '0.1'
+
+    libraryDescription = ''
+    siteUrl = 'https://github.com/shahab-yousefi/cg-lib'
+    gitUrl = 'https://github.com/shahab-yousefi/cg-lib.git'
+
+    developerId = 'codegames'
+    developerName = 'Shahab Yousefi'
+    developerEmail = 'shahab_yousefi@live.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+if(project.rootProject.file('local.properties').exists()) {
+    apply from: 'install.gradle'
+    apply from: 'bintray.gradle'
+}
+
