@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -24,16 +23,22 @@
         android:orientation="vertical">
 
         <lib.codegames.widget.ImageViewCG
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:cg_imageMode="IMAGE_CIRCLE"
             android:layout_margin="10dp"
             app:srcCompat="@mipmap/ic_launcher"/>
 
-        <lib.codegames.widget.ButtonCG
+        <lib.codegames.widget.CheckableImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cg_fontPath=""/>
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:scaleType="center"
+            app:cg_borderSize="0dp"
+            app:cg_backgroundColor="#50000000"
+            app:cg_imageMode="IMAGE_SQUARE"
+            app:cg_image_on="@drawable/ic_update_black_24dp"
+            app:cg_image_off="@null"/>
 
     </LinearLayout>
 

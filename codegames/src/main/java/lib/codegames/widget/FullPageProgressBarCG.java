@@ -23,9 +23,9 @@ public class FullPageProgressBarCG extends RelativeLayout {
     private ProgressBarCG loadingBar;
     private TextViewCG loadingTextView;
     private final int defLoadingBackGroundColor = ColorCG.parseColor("#000000");
-    private final int defLoadingTextSize = SizeCG.dp2px(30);
+    private final int defLoadingTextSize = SizeCG.Companion.dp2Px(30);
     private final int defLoadingBarColor = ColorCG.parseColor("#3F51B5");
-    private final int defLoadingBarWidth = SizeCG.dp2px(20);
+    private final int defLoadingBarWidth = SizeCG.Companion.dp2Px(20);
     private final int defLoadingTextColor = ColorCG.parseColor("#FAFAFA");
     private Mode mode;
     private boolean loading = false;
@@ -137,7 +137,7 @@ public class FullPageProgressBarCG extends RelativeLayout {
         if(getContext() == null)
             return;
 
-        int margin = SizeCG.dp2px(10);
+        int margin = SizeCG.Companion.dp2Px(10);
 
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -153,7 +153,7 @@ public class FullPageProgressBarCG extends RelativeLayout {
         loadingBar.setMode(ProgressBarCG.Mode.MODE_CIRCLE);
         linearLayout.addView(loadingBar, 0);
         LinearLayout.LayoutParams progressBarParams = (LinearLayout.LayoutParams) loadingBar.getLayoutParams();
-        int minSize = Math.min(SizeCG.getScreenWidthPX(), SizeCG.getScreenWidthPX());
+        int minSize = Math.min(SizeCG.Companion.getScreenWidthPX(), SizeCG.Companion.getScreenWidthPX());
         progressBarParams.width = minSize / 3;
         progressBarParams.height = minSize / 3;
         progressBarParams.gravity = Gravity.CENTER;

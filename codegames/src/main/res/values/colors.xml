@@ -276,5 +276,6 @@
 
     <color name="color_material_black">#212121</color>
     <color name="color_material_white">#FDFDFD</color>
+    <color name="color_transparent">#00000000</color>
 
 </resources>

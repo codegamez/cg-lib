@@ -4,14 +4,13 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 27
-    publishNonDefault true
+//    defaultPublishConfig 'release'
 
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 1
-        versionName "0.1"
-
+        versionCode 2
+        versionName "0.17"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -21,6 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
@@ -55,8 +55,8 @@ ext {
     libraryName = 'codegames'
 
     publishedGroupId = 'lib.codegames'
-    artifact = 'cglib'
-    libraryVersion = '0.1'
+    artifact = 'cg-lib'
+    libraryVersion = android.defaultConfig.versionName
 
     libraryDescription = ''
     siteUrl = 'https://github.com/shahab-yousefi/cg-lib'

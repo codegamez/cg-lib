@@ -55,4 +55,10 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="CheckableImageView">
+        <attr name="android:checked" />
+        <attr name="cg_image_on" format="reference" />
+        <attr name="cg_image_off" format="reference" />
+    </declare-styleable>
+
 </resources>

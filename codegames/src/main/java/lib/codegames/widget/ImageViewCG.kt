@@ -8,8 +8,6 @@ import android.graphics.drawable.Drawable
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
-import android.util.Log
-import android.widget.LinearLayout
 import lib.codegames.R
 import lib.codegames.graphics.ColorCG
 import lib.codegames.graphics.SizeCG
@@ -57,7 +55,7 @@ open class ImageViewCG : AppCompatImageView {
 
     var textSize: Int = 0
         set(value) {
-            field = SizeCG.dp2px(value)
+            field = SizeCG.dp2Px(value)
             mTextPaint.textSize = value.toFloat()
             mTextPaint.getTextBounds(this.text, 0, this.text.length, mTextBounds)
             if(mInitialised) invalidate()
@@ -84,34 +82,34 @@ open class ImageViewCG : AppCompatImageView {
         IMAGE_NORMAL
     }
 
-    constructor(context: Context)
+    constructor(context: Context?)
             : super(context)
 
-    constructor(context: Context, attrs: AttributeSet)
+    constructor(context: Context?, attrs: AttributeSet?)
             : super(context, attrs) {
         initialise(context, attrs)
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int)
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int)
             : super(context, attrs, defStyleAttr) {
         initialise(context, attrs)
     }
 
-    private fun initialise(context: Context, attrs: AttributeSet) {
-        val attributeArray = context.obtainStyledAttributes(
+    private fun initialise(context: Context?, attrs: AttributeSet?) {
+        val attributeArray = context?.obtainStyledAttributes(
                 attrs,
                 R.styleable.ImageViewCG)
 
-        val text = attributeArray.getString(R.styleable.ImageViewCG_android_text) ?: ""
-        val fontPath = attributeArray.getString(R.styleable.ImageViewCG_cg_fontPath)
-        val textColor = attributeArray.getColor(R.styleable.ImageViewCG_android_textColor, defTextColor)
-        val backgroundColor = attributeArray.getColor(R.styleable.ImageViewCG_cg_backgroundColor, defBackgroundColor)
-        val borderColor = attributeArray.getColor(R.styleable.ImageViewCG_cg_borderColor, defBorderColor)
-        val textSize = attributeArray.getDimensionPixelSize(R.styleable.ImageViewCG_android_textSize, defTextSize)
-        val borderSize = attributeArray.getDimensionPixelSize(R.styleable.ImageViewCG_cg_borderSize, defBorderSize)
-        val mode = attributeArray.getInt(R.styleable.ImageViewCG_cg_imageMode, -1)
+        val text = attributeArray?.getString(R.styleable.ImageViewCG_android_text) ?: ""
+        val fontPath = attributeArray?.getString(R.styleable.ImageViewCG_cg_fontPath)
+        val textColor = attributeArray?.getColor(R.styleable.ImageViewCG_android_textColor, defTextColor) ?: defTextColor
+        val backgroundColor = attributeArray?.getColor(R.styleable.ImageViewCG_cg_backgroundColor, defBackgroundColor) ?: defBackgroundColor
+        val borderColor = attributeArray?.getColor(R.styleable.ImageViewCG_cg_borderColor, defBorderColor) ?: defBorderColor
+        val textSize = attributeArray?.getDimensionPixelSize(R.styleable.ImageViewCG_android_textSize, defTextSize) ?: defTextSize
+        val borderSize = attributeArray?.getDimensionPixelSize(R.styleable.ImageViewCG_cg_borderSize, defBorderSize) ?: defBorderColor
+        val mode = attributeArray?.getInt(R.styleable.ImageViewCG_cg_imageMode, -1) ?: -1
 
-        attributeArray.recycle()
+        attributeArray?.recycle()
 
         mBackgroundPaint.isAntiAlias = true
         mBackgroundPaint.style = Paint.Style.FILL
@@ -159,21 +157,9 @@ open class ImageViewCG : AppCompatImageView {
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        MeasureSpec.EXACTLY
-        val width = MeasureSpec.getSize(widthMeasureSpec)
-        val height = MeasureSpec.getSize(heightMeasureSpec)
         if (mode != Mode.IMAGE_NORMAL) {
-            if(height == 0) {
-                super.onMeasure(widthMeasureSpec, widthMeasureSpec)
-            }else if(width == 0) {
-                super.onMeasure(heightMeasureSpec, heightMeasureSpec)
-            }else {
-                if(width < height) {
-                    super.onMeasure(widthMeasureSpec, widthMeasureSpec)
-                }else {
-                    super.onMeasure(heightMeasureSpec, heightMeasureSpec)
-                }
-            }
+            val measure = Squarizer.measure(widthMeasureSpec, heightMeasureSpec)
+            super.onMeasure(measure.width, measure.height)
         }else
             super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         fixMainBounds()
@@ -310,8 +296,8 @@ open class ImageViewCG : AppCompatImageView {
         private val defBorderColor = Color.parseColor("#3F51B5")
         private val defBackgroundColor = Color.parseColor("#2196F3")
         private val defTextColor = Color.parseColor("#fdfdfd")
-        private val defTextSize = SizeCG.dp2px(15)
-        private val defBorderSize = SizeCG.dp2px(2)
+        private val defTextSize = SizeCG.dp2Px(15)
+        private val defBorderSize = SizeCG.dp2Px(2)
     }
 
 }
