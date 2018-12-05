@@ -17,30 +17,15 @@
 
     </android.support.v4.view.ViewPager>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <lib.codegames.widget.ImageViewCG
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:cg_imageMode="IMAGE_CIRCLE"
-            android:layout_margin="10dp"
-            app:srcCompat="@mipmap/ic_launcher"/>
-
-        <lib.codegames.widget.CheckableImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:checked="true"
-            android:scaleType="center"
-            app:cg_borderSize="0dp"
-            app:cg_backgroundColor="#50000000"
-            app:cg_imageMode="IMAGE_SQUARE"
-            app:cg_image_on="@drawable/ic_update_black_24dp"
-            app:cg_image_off="@null"/>
-
-    </LinearLayout>
+    <lib.codegames.widget.ImageViewCG
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/avd_progress"/>
 
 
 </android.support.constraint.ConstraintLayout>
