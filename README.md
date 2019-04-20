@@ -12,6 +12,6 @@ repositories {
 and add this implementation to dependencies in app `build.gradle`
 ```gradle
 dependencies {
-    implementation 'lib.codegames:cg-lib:0.17'
+    implementation 'lib.codegames:cg-lib:0.20'
 }
 ```
