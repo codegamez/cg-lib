@@ -1,11 +1,9 @@
 package com.codegames.codegameslibrarytest
 
-import android.graphics.drawable.Animatable
 import android.os.Bundle
-import android.support.graphics.drawable.AnimatedVectorDrawableCompat
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_content.*
-
+import lib.codegames.extension.simpleSetup
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,11 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val animatable = imageView.drawable as Animatable
+        val data = arrayOf("name 1" to 1, "name 2" to 2)
 
-        imageView.setOnClickListener {
-            animatable.start()
-        }
+        spinner.simpleSetup(data) { it.first }
 
     }
 

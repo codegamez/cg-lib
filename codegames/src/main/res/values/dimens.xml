@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="space_2xs">1dp</dimen>
+    <dimen name="space_xs">3dp</dimen>
+    <dimen name="space_sm">5dp</dimen>
+    <dimen name="space_md">8dp</dimen>
+    <dimen name="space_lg">12dp</dimen>
+    <dimen name="space_xl">16dp</dimen>
+    <dimen name="space_2xl">24dp</dimen>
+    <dimen name="space_3xl">32dp</dimen>
+    <dimen name="space_4xl">48dp</dimen>
+    <dimen name="space_5xl">64dp</dimen>
+
+    <dimen name="font_2xs">8sp</dimen>
+    <dimen name="font_xs">10sp</dimen>
+    <dimen name="font_sm">12sp</dimen>
+    <dimen name="font_md">14sp</dimen>
+    <dimen name="font_lg">18sp</dimen>
+    <dimen name="font_xl">24sp</dimen>
+    <dimen name="font_2xl">30sp</dimen>
+    <dimen name="font_3xl">36sp</dimen>
+    <dimen name="font_4xl">42sp</dimen>
+
+</resources>
