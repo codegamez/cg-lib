@@ -52,7 +52,7 @@
         <attr name="barColor" format="color"/>
         <attr name="backgroundColor"/>
         <attr name="loading"/>
-        <attr name="speed"/>
+        <attr name="speed" format="integer"/>
         <attr name="progressMode">
             <enum name="MODE_CIRCLE" value="0"/>
             <enum name="MODE_LINEAR" value="1"/>

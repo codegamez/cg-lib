@@ -7,11 +7,11 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.os.Build
 import android.os.SystemClock
-import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
-import android.support.annotation.RequiresApi
 import android.util.AttributeSet
 import android.widget.ProgressBar
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.RequiresApi
 import lib.codegames.R
 import lib.codegames.graphics.ColorCG
 import java.util.*

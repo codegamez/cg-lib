@@ -10,7 +10,7 @@ import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.StateListDrawable
 import android.graphics.drawable.shapes.RoundRectShape
 import android.os.Build
-import android.support.v7.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatButton
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.LinearLayout

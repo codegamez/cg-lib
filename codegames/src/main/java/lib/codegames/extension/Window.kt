@@ -4,8 +4,8 @@ package lib.codegames.extension
 
 import android.animation.ObjectAnimator
 import android.os.Build
-import android.support.annotation.ColorRes
 import android.view.Window
+import androidx.annotation.ColorRes
 import lib.codegames.graphics.ColorCG
 
 fun Window.setStatusBarColor(@ColorRes colorId: Int, duration: Long = 0) {

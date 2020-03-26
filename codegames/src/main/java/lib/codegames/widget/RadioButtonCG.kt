@@ -1,7 +1,7 @@
 package lib.codegames.widget
 
 import android.content.Context
-import android.support.v7.widget.AppCompatRadioButton
+import androidx.appcompat.widget.AppCompatRadioButton
 import android.util.AttributeSet
 
 class RadioButtonCG : AppCompatRadioButton {
