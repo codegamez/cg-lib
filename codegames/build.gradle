@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 28
-    // todo: comment for developing
-    // defaultPublishConfig 'release'
+    defaultPublishConfig 'release'
 
     defaultConfig {
         minSdkVersion 16
@@ -50,31 +50,16 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    bintrayRepo = 'cg-lib'
-    bintrayName = 'lib.codegames'
-
-    libraryName = 'codegames'
-
-    publishedGroupId = 'lib.codegames'
-    artifact = 'cg-lib'
-    libraryVersion = android.defaultConfig.versionName
-
-    libraryDescription = ''
-    siteUrl = 'https://github.com/shahab-yousefi/cg-lib'
-    gitUrl = 'https://github.com/shahab-yousefi/cg-lib.git'
-
-    developerId = 'codegames'
-    developerName = 'Shahab Yousefi'
-    developerEmail = 'shahab_yousefi@live.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-if(project.rootProject.file('local.properties').exists()) {
-    apply from: 'install.gradle'
-    apply from: 'bintray.gradle'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'lib.codegames'
+                artifactId = 'cg-lib'
+                version = '1.0'
+            }
+        }
+    }
 }
 
