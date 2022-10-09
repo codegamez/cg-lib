@@ -4,14 +4,12 @@
 add this url to repositories in project `build.gradle`
 ```gradle
 repositories {
-    maven {
-        url  "https://dl.bintray.com/codegames/cg-lib" 
-    }
+    maven { url 'https://jitpack.io' }
 }
 ```
 and add this implementation to dependencies in app `build.gradle`
 ```gradle
 dependencies {
-    implementation 'lib.codegames:cg-lib:0.20'
+    implementation 'com.github.codegamez:cg-lib:0.1.0'
 }
 ```
